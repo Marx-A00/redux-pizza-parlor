@@ -33,19 +33,17 @@ function App() {
         console.log("error on GET", error);
       });
   };
-  const addPizzaToCart = (event) => {
-    console.log(event.target.parentElement);
-    console.log(event.target.value);
-    // dispatch({
-    //   type: `ADD_PIZZA`,
-    //   payload: event.target.value,
-    // });
+  const addPizzaToCart = (pizza) => {
+    dispatch({
+      type: `ADD_PIZZA`,
+      payload: pizza,
+    });
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        {totalCartPrice}
+        ${totalCartPrice}
         <h1 className="App-title">Prime Pizza</h1>
       </header>
       <div className="container">
@@ -55,7 +53,7 @@ function App() {
               <p>{pizza.name}</p>
               <p>{pizza.description}</p>
               <p>{pizza.price}</p>
-              <button onClick={addPizzaToCart}>Add to Cart</button>
+              <button onClick={() => addPizzaToCart(pizza)}>Add to Cart</button>
             </div>
           );
         })}
