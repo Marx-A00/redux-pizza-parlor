@@ -7,13 +7,18 @@ const cart = (state = [], action) => {
     const thePizzaWeDispatched = action.payload;
     return [...state,thePizzaWeDispatched];
   }
-  
+  if(action.type ===`REMOVE_PIZZA`){
+    const pizzaToRemove = action.payload;
+    console.log("Pizza to Remove: ", pizzaToRemove);
+    return state.filter(item => item.id !== pizzaToRemove.id);
+  }
   return state;
 }
 
 const store = createStore(
   combineReducers({
     cart, // 👈 Be sure to replace this, too!
+
   }),
   applyMiddleware(logger),
 );

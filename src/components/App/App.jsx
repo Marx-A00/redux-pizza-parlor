@@ -8,7 +8,6 @@ import PizzaItem from "../PizzaItem/PizzaItem";
 function App() {
   const [pizzaList, setPizzaList] = useState([]);
 
-  const [isToggled,setIsToggled] = useState(false);
 
   const cartItems = useSelector(store => store.cart);
   
@@ -36,33 +35,7 @@ function App() {
         console.log("error on GET", error);
       });
   };
-  // const addPizzaToCart = (pizza) => {
-  //   dispatch({
-  //     type: `ADD_PIZZA`,
-  //     payload: pizza,
-  //   });
-  //   toggleButton();
-  // };
-  
-  // const toggleButton =()=>{
-
-  //   setIsToggled(!isToggled);
-  // }
-
-  // const displayButton =(pizza)=>{
-  //   if (isToggled){
-  //     return(
-  //       <button>Delete</button>
-  //     )
-  //   }
-  //   else{
-  //     return(
-
-  //       <button onClick={() => addPizzaToCart(pizza)}>Add To Cart</button>
-  //     )
-  //   }
-  // }
-
+ 
 
   return (
     <div className="App">
@@ -74,14 +47,6 @@ function App() {
         {pizzaList.map((pizza) => {
 
             return(<PizzaItem pizza={pizza}/>)
-            
-          //   <div className="card" height={200} width={200}>
-          //     <p>{pizza.name}</p>
-          //     <p>{pizza.description}</p>
-          //     <p>{pizza.price}</p>
-          //     {displayButton(pizza)}
-          //   </div>
-          // );
         })}
       </div>
 

@@ -4,6 +4,7 @@ import "../App/App.css";
 import {useState} from 'react'
 
 function PizzaItem({pizza}){
+
     const [isToggled,setIsToggled] = useState(false)
 
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function PizzaItem({pizza}){
       const displayButton =()=>{
         if (isToggled){
           return(
-            <button>Delete</button>
+            <button onClick={removePizzaFromCart}>Delete</button>
           )
         }
         else{
@@ -32,6 +33,14 @@ function PizzaItem({pizza}){
             <button onClick={() => addPizzaToCart()}>Add To Cart</button>
           )
         }
+      }
+
+      const removePizzaFromCart = () =>{
+        dispatch({
+            type: `REMOVE_PIZZA`,
+            payload: pizza
+        })
+        toggleButton();
       }
 
     return (
