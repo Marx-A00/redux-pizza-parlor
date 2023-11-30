@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import PizzaItem from "../PizzaItem/PizzaItem";
+import { HashRouter as Router,Route,Provider } from "react-router-dom";
 
 function App() {
+  
   const [pizzaList, setPizzaList] = useState([]);
-
 
   const cartItems = useSelector(store => store.cart);
   

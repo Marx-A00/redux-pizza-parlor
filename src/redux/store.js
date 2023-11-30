@@ -23,5 +23,4 @@ const store = createStore(
   applyMiddleware(logger),
 );
 
-
 export default store;
