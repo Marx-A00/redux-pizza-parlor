@@ -24,6 +24,10 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 ```
 npm run client
 ```
+[x]
+
+
+
 
 ## Base Mode ad API DOCS
 
@@ -31,13 +35,13 @@ The tasks for Base Mode are broken down further [on this Trello Board](https://t
 
 After starting up the server, the following routes should be available. You can test them with Postman.
 
-### GET PIZZA  
+[x]### GET PIZZA  
 
 `/api/pizza`
 
 **Returns** an array of objects with *id*, *name*, *description*, *price*, and *image_path*. 
 
-### POST ORDER
+[x]### POST ORDER
 
 `/api/order`
 
@@ -65,7 +69,7 @@ In Postman, select the Body tab, select Raw radio button, and then a blue dropdo
 }
 ```
 
-### GET ORDERS
+[x]### GET ORDERS
 
 `/api/order`
 
