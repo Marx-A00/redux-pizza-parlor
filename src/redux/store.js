@@ -14,11 +14,21 @@ const cart = (state = [], action) => {
   }
   return state;
 }
+const orderDetails = (state = {},action)=>{
+  if(action.type === `SET_ORDER_DETAILS`){
+    const orderDetailsToAdd = action.payload;
+    return {...state,...orderDetailsToAdd}
+    // return state = orderDetailsToAdd;
+
+  }
+
+  return state;
+}
 
 const store = createStore(
   combineReducers({
-    cart, // 👈 Be sure to replace this, too!
-
+    cart,
+    orderDetails 
   }),
   applyMiddleware(logger),
 );

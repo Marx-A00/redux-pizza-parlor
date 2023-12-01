@@ -5,6 +5,8 @@ import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import PizzaItem from "../PizzaItem/PizzaItem";
 import { HashRouter as Router,Route,Provider } from "react-router-dom";
+import OrderDetails from "../OrderDetails/OrderDetails";
+
 
 function App() {
   
@@ -40,19 +42,29 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
+
       <header className="App-header">
         ${totalCartPrice}
         <h1 className="App-title">Prime Pizza</h1>
       </header>
+      <Route exact path="/">
+
       <div className="container">
         {pizzaList.map((pizza) => {
 
             return(<PizzaItem pizza={pizza}/>)
         })}
       </div>
+      </Route>
+      <Route exact path="/orderDetails">
+        <OrderDetails />
+
+      </Route>
 
       {/* <img src='images/pizza_photo.png' /> */}
       {/* <p>Pizza is great.</p> */}
+      </Router>
     </div>
   );
 }
