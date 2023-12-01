@@ -62,7 +62,15 @@ function OrderDetails(){
             value={zipInput}
             onChange={handleZipInput}
             />
-        <button>NEXT</button>
+            <input
+            type="radio"
+
+            
+            />
+            <input
+            type="radio"/>
+            <label for="Pickup"></label>
+        <button className='next'>NEXT</button>
         </form>
     )
 }
